@@ -41,13 +41,20 @@
     let bottomX = 0;
     let bottomY = 0;
 
-    let test = setInterval(function () {
-      console.log(ball.style.bottom);
-      ball.style.bottom = `${bottomY++}px`
-      if (bottomY === 400) {
-        clearInterval(test);
+    let start = new Date().getTime();
+    let callback = function () {
+      let ts = new Date().getTime();
+      if (ts - 1000 > start) {
+        console.log('End');
+      } else {
+        console.log(ts);
       }
-    }, 1);
+    };
+
+    function bounce() {
+      // 애니메이션 실행 코드
+      requestAnimationFrame(bounce);
+    };
 
     window.addEventListener('keydown', function (e) {
       switch (e.code) {
