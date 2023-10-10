@@ -25,7 +25,7 @@
       border-radius: 50px;
       background-color: yellow;
       position: absolute;
-      bottom: 0;
+      bottom: 0px;
     }
   </style>
 </head>
@@ -33,36 +33,32 @@
 <body>
   <div id="root">
     <div id="ball">
-
-    </div>
-    <div id="bottom">
-
     </div>
   </div>
   <script>
     const root = document.getElementById('root');
     const ball = document.getElementById('ball');
-    const bottom = document.getElementById('bottom');
-    bottomX = 0;
-    bottomY = 0;
+    let bottomX = 0;
+    let bottomY = 0;
 
-    setInterval(function () {
-      // ball.style.bottom = `${bottomY++}px`
-      // if (ball.style.bottom > 300) {
-      //   ball.style.bottom = `${bottomY++}px`
-      // }
-    }, 1)
+    let test = setInterval(function () {
+      console.log(ball.style.bottom);
+      ball.style.bottom = `${bottomY++}px`
+      if (bottomY === 400) {
+        clearInterval(test);
+      }
+    }, 1);
 
     window.addEventListener('keydown', function (e) {
       switch (e.code) {
         case 'ArrowLeft':
           ball.style.left = `${bottomX}px`
-          
+
 
         case 'ArrowRight':
           ball.style.right = `${bottomX}px`
           console.log(bottomX)
-          
+
       }
     });
   </script>
