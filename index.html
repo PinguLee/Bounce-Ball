@@ -40,14 +40,21 @@
     const ball = document.getElementById('ball');
     let bottomX = 0;
     let bottomY = 0;
-
+    let ud = 0;
     function bounce() {
       ball.style.bottom = `${bottomY}px`
       console.log(bottomY);
-      if (bottomY === 0 || bottomY < 300) {
-        bottomY += 1;
+      if (ud === 0 && (bottomY === 0 || bottomY < 300)) {
+        bottomY += 10;
+        if (bottomY === 300) {
+          ud = 1;
+        }
+      } else if (ud === 1 && (bottomY === 300 || bottomY > 0)) {
+        bottomY -= 10;
+        if (bottomY === 0) {
+          ud = 0;
+        }
       }
-      
       requestAnimationFrame(bounce);
     };
     bounce();
