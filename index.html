@@ -26,6 +26,7 @@
       background-color: yellow;
       position: absolute;
       bottom: 0px;
+      left: 0;
     }
   </style>
 </head>
@@ -61,13 +62,12 @@
     window.addEventListener('keydown', function (e) {
       switch (e.code) {
         case 'ArrowLeft':
-          ball.style.left = `${bottomX}px`
-
+          bottomX -= 10;
+          ball.style.left = `${bottomX}px`;
 
         case 'ArrowRight':
-          ball.style.right = `${bottomX}px`
-          console.log(bottomX)
-
+          bottomX += 5;
+          ball.style.left = `${bottomX}px`;
       }
     });
   </script>
