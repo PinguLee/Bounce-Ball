@@ -43,7 +43,6 @@
     let ud = 0;
     function bounce() {
       ball.style.bottom = `${bottomY}px`
-      console.log(bottomY);
       if (ud === 0 && (bottomY === 0 || bottomY < 300)) {
         bottomY += 10;
         if (bottomY === 300) {
@@ -59,18 +58,18 @@
     };
     bounce();
 
-    // window.addEventListener('keydown', function (e) {
-    //   switch (e.code) {
-    //     case 'ArrowLeft':
-    //       ball.style.left = `${bottomX}px`
+    window.addEventListener('keydown', function (e) {
+      switch (e.code) {
+        case 'ArrowLeft':
+          ball.style.left = `${bottomX}px`
 
 
-    //     case 'ArrowRight':
-    //       ball.style.right = `${bottomX}px`
-    //       console.log(bottomX)
+        case 'ArrowRight':
+          ball.style.right = `${bottomX}px`
+          console.log(bottomX)
 
-    //   }
-    // });
+      }
+    });
   </script>
 </body>
 
