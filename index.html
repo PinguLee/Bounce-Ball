@@ -20,9 +20,9 @@
     }
 
     #ball {
-      width: 100px;
-      height: 100px;
-      border-radius: 50px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
       background-color: yellow;
       position: absolute;
       bottom: 0px;
@@ -41,33 +41,29 @@
     let bottomX = 0;
     let bottomY = 0;
 
-    let start = new Date().getTime();
-    let callback = function () {
-      let ts = new Date().getTime();
-      if (ts - 1000 > start) {
-        console.log('End');
-      } else {
-        console.log(ts);
-      }
-    };
-
     function bounce() {
-      // 애니메이션 실행 코드
+      ball.style.bottom = `${bottomY}px`
+      console.log(bottomY);
+      if (bottomY === 0 || bottomY < 300) {
+        bottomY += 1;
+      }
+      
       requestAnimationFrame(bounce);
     };
+    bounce();
 
-    window.addEventListener('keydown', function (e) {
-      switch (e.code) {
-        case 'ArrowLeft':
-          ball.style.left = `${bottomX}px`
+    // window.addEventListener('keydown', function (e) {
+    //   switch (e.code) {
+    //     case 'ArrowLeft':
+    //       ball.style.left = `${bottomX}px`
 
 
-        case 'ArrowRight':
-          ball.style.right = `${bottomX}px`
-          console.log(bottomX)
+    //     case 'ArrowRight':
+    //       ball.style.right = `${bottomX}px`
+    //       console.log(bottomX)
 
-      }
-    });
+    //   }
+    // });
   </script>
 </body>
 
