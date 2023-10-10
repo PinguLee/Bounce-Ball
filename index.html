@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>공튀기기</title>
   <style>
     * {
       margin: 0;
@@ -26,7 +26,6 @@
       background-color: yellow;
       position: absolute;
       bottom: 0px;
-      left: 0;
     }
   </style>
 </head>
@@ -59,15 +58,17 @@
     };
     bounce();
 
+
     window.addEventListener('keydown', function (e) {
       switch (e.code) {
         case 'ArrowLeft':
-          bottomX -= 10;
+          bottomX -= 5;
           ball.style.left = `${bottomX}px`;
-
+          break;
         case 'ArrowRight':
-          bottomX += 5;
+        bottomX += 5;
           ball.style.left = `${bottomX}px`;
+          break;
       }
     });
   </script>
